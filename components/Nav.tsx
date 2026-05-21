@@ -10,14 +10,7 @@ const links = [
 ];
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Lock body scroll when menu open
   useEffect(() => {
@@ -25,20 +18,16 @@ export default function Nav() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  const navBg = scrolled || open
-    ? "bg-white/97 backdrop-blur-md border-b border-black/10"
-    : "border-b border-transparent";
+  const navBg = "bg-white/97 backdrop-blur-md border-b border-black/10";
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-14 py-5 md:py-7 transition-all duration-500 ${navBg}`}>
+      <nav className={`sticky top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-14 py-5 md:py-7 transition-all duration-500 ${navBg}`}>
         {/* Logo */}
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className={`font-serif text-[12px] md:text-[13.5px] font-light tracking-[.24em] md:tracking-[.28em] uppercase transition-colors duration-500 ${
-            scrolled || open ? "text-[#1a1816]" : "text-white/85"
-          }`}
+          className={`font-serif text-[12px] md:text-[13.5px] font-light tracking-[.24em] md:tracking-[.28em] uppercase transition-colors duration-500 text-[#1a1816]`}
         >
           Sylviane Paris-Dickson
         </Link>
@@ -49,9 +38,7 @@ export default function Nav() {
             <li key={label}>
               <Link
                 href={href}
-                className={`text-[9.5px] tracking-[.22em] uppercase font-light transition-colors duration-300 ${
-                  scrolled ? "text-[#6a6560] hover:text-[#1a1816]" : "text-white/55 hover:text-white/95"
-                }`}
+                className={`text-[9.5px] tracking-[.22em] uppercase font-light transition-colors duration-300 text-[#6a6560] hover:text-[#1a1816]`}
               >
                 {label}
               </Link>
@@ -68,15 +55,15 @@ export default function Nav() {
           <span className={`block w-6 h-px transition-all duration-300 ${
             open
               ? "rotate-45 translate-y-[6px] bg-[#1a1816]"
-              : scrolled ? "bg-[#1a1816]" : "bg-white"
+              : "bg-[#1a1816]"
           }`} />
           <span className={`block w-6 h-px transition-all duration-300 ${
-            open ? "opacity-0 bg-[#1a1816]" : scrolled ? "bg-[#1a1816]" : "bg-white"
+            open ? "opacity-0 bg-[#1a1816]" : "bg-[#1a1816]"
           }`} />
           <span className={`block w-6 h-px transition-all duration-300 ${
             open
               ? "-rotate-45 -translate-y-[6px] bg-[#1a1816]"
-              : scrolled ? "bg-[#1a1816]" : "bg-white"
+              : "bg-[#1a1816]"
           }`} />
         </button>
       </nav>

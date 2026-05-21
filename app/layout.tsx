@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -6,9 +7,15 @@ export const metadata: Metadata = {
   description: "I paint spaces shaped by human hands, exploring the quiet presence and memory they hold.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: { lang: string };
+}) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body>{children}</body>
     </html>
   );

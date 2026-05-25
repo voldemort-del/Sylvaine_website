@@ -1,3 +1,4 @@
+// Interactive editor trial comment
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import NorthrupStrip from "@/components/NorthrupStrip";

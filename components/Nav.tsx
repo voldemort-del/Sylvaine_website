@@ -7,9 +7,6 @@ const links = [
   { label: "Commission", href: "/commission" },
   { label: "Collectors", href: "/collectors" },
   { label: "Contact", href: "/contact" },
-  { label: "Exhibition", href: "/exhibition" },
-  { label: "Press", href: "/press" },
-  { label: "About", href: "/collectors/about" },
 ];
 
 export default function Nav() {

@@ -26,7 +26,7 @@ export default function ContactClient() {
     try {
       // Save to Pocketbase
       const pbRes = await fetch(
-        `${process.env.NEXT_PUBLIC_POCKETBASE_URL}/api/collections/contact_submissions/records`,
+        `${process.env.NEXT_PUBLIC_POCKETBASE_URL || "https://sgzo0nrujpc3b4h.ba7w.pocketbasecloud.com"}/api/collections/contact_submissions/records`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

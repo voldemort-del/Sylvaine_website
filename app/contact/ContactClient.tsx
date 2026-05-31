@@ -62,7 +62,7 @@ export default function ContactClient() {
             src="/morning-visit.jpg"
             alt="Morning Visit — Sylviane Paris-Dickson"
             fill
-            className="object-cover object-center transition-transform duration-[12s] ease-out hover:scale-[1.04]"
+            className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
@@ -76,7 +76,7 @@ export default function ContactClient() {
         </div>
 
         {/* RIGHT — contact */}
-        <div className="flex flex-col justify-center px-6 md:px-16 py-14 md:py-20 bg-[#faf9f6] overflow-y-auto">
+        <div className="flex flex-col justify-center px-6 md:px-16 py-16 md:py-24 bg-[#faf9f6] overflow-y-auto">
 
           <p className="flex items-center gap-3 text-[9px] tracking-[.28em] uppercase text-[#9a9188] mb-5">
             <span className="block w-7 h-px bg-[#9a9188]" />
@@ -95,8 +95,9 @@ export default function ContactClient() {
           {/* Direct links */}
           <div className="flex flex-col mb-8">
             {[
-              { label: "Email",     value: "sylviane.paris_dickson@yahoo.com",    href: "mailto:sylviane.paris_dickson@yahoo.com" },
+              { label: "Email",     value: "sylviane.paris_dickson@yahoo.com", href: "mailto:sylviane.paris_dickson@yahoo.com" },
               { label: "Instagram", value: "@sylvianeparisdickson", href: "https://www.instagram.com/sylvianeparisdickson" },
+              { label: "Facebook",  value: "Sylviane Paris-Dickson", href: "https://www.facebook.com/sylvianeparisdickson" },
             ].map((item) => (
               <div key={item.label}
                 className="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-5 py-4 border-t border-black/10 last:border-b transition-all duration-300 sm:hover:pl-2">

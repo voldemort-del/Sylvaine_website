@@ -82,13 +82,9 @@ export default function CommissionClient() {
             Each painting begins with a conversation — about a place, a memory, and what you wish to hold onto.
           </p>
           <a href="#form"
-            className="inline-flex items-center gap-3 text-[9.5px] tracking-[.22em] uppercase text-white/75 border-b border-white/30 pb-1 hover:text-white hover:border-white transition-all duration-300">
+            className="inline-flex items-center gap-3 text-[9.5px] tracking-[.22em] uppercase text-white/75 border-b border-white/30 pb-1 hover:text-white hover:border-white">
             Begin a conversation <span>→</span>
           </a>
-        </div>
-        <div className="hidden md:flex absolute right-14 bottom-12 flex-col items-center gap-2.5">
-          <span className="text-[8px] tracking-[.24em] uppercase text-white/30 [writing-mode:vertical-rl]">Scroll</span>
-          <div className="w-px h-11 bg-white/22 scroll-pulse" />
         </div>
       </section>
 
@@ -121,6 +117,31 @@ export default function CommissionClient() {
             <p>Whether it is a park, a garden, an architectural setting, or a personal environment, I work closely with each client to understand what draws them to the subject and how they wish to experience it through painting.</p>
             <p>Commissions may be based on your own photographs or on images I create specifically for the project.</p>
             <p>Each piece is developed through a thoughtful exchange, allowing the project to take shape with clarity and intention. My aim is to translate not only the visual elements, but also the atmosphere and presence that make a place significant.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* TYPICAL DIMENSIONS */}
+      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] border-b border-black/10 bg-[#faf9f6]">
+        <div className="px-6 md:px-14 py-10 md:py-14 border-b md:border-b-0 md:border-r border-black/10 flex flex-col justify-start">
+          <span className="block text-[9px] tracking-[.22em] uppercase text-[#9a9188]">Format &amp; scale</span>
+        </div>
+        <div className="px-6 md:px-16 py-10 md:py-14">
+          <div className="text-[15px] text-[#6a6560] leading-[1.95] max-w-xl space-y-5">
+            <p>
+              Most commissioned works are created in medium formats that allow space for detail, atmosphere, and the perception of light to fully develop.
+            </p>
+            <div>
+              <p className="mb-3">Typical dimensions range around:</p>
+              <ul className="space-y-2 font-serif italic text-[#1a1816] text-[16px] md:text-[17px]">
+                <li>22 × 30 in / 56 × 76 cm</li>
+                <li className="text-[#9a9188] not-italic text-[13px] tracking-[.12em] uppercase">or</li>
+                <li>19 × 24 in / 48 × 61 cm</li>
+              </ul>
+            </div>
+            <p>
+              However, each project is approached individually, and dimensions may vary depending on the subject, composition, and the nature of the reference material.
+            </p>
           </div>
         </div>
       </div>

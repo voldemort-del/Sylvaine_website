@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const links = [
-  { label: "Study", href: "/study" },
+  { label: "Studies", href: "/study" },
   { label: "Commission", href: "/commission" },
   { label: "Collectors", href: "/collectors" },
   { label: "Contact", href: "/contact" },
@@ -22,12 +22,12 @@ export default function Nav() {
 
   return (
     <>
-      <nav className={`sticky top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-14 py-5 md:py-7 transition-all duration-500 ${navBg}`}>
+      <nav className={`sticky top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-14 py-5 md:py-7 ${navBg}`}>
         {/* Logo */}
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className={`font-serif text-[10px] sm:text-[12px] md:text-[13.5px] font-light tracking-[.18em] sm:tracking-[.24em] md:tracking-[.28em] uppercase transition-colors duration-500 text-[#1a1816] max-w-[55vw] sm:max-w-none truncate sm:overflow-visible sm:whitespace-normal`}
+          className={`font-serif text-[10px] sm:text-[12px] md:text-[13.5px] font-normal tracking-[.12em] sm:tracking-[.16em] md:tracking-[.2em] uppercase transition-colors duration-500 text-[#1a1816] max-w-[55vw] sm:max-w-none truncate sm:overflow-visible sm:whitespace-normal`}
         >
           Sylviane Paris-Dickson
         </Link>
@@ -38,7 +38,7 @@ export default function Nav() {
             <li key={label}>
               <Link
                 href={href}
-                className={`text-[9.5px] tracking-[.22em] uppercase font-light transition-colors duration-300 text-[#6a6560] hover:text-[#1a1816]`}
+                className={`text-[9.5px] tracking-[.18em] uppercase font-normal transition-colors duration-300 text-[#6a6560] hover:text-[#1a1816]`}
               >
                 {label}
               </Link>
@@ -69,16 +69,15 @@ export default function Nav() {
       </nav>
 
       {/* Mobile full-screen menu */}
-      <div className={`fixed inset-0 z-40 bg-white flex flex-col justify-center items-center gap-8 sm:gap-10 px-6 overflow-y-auto overscroll-contain transition-all duration-500 md:hidden pb-[env(safe-area-inset-bottom)] ${
+      <div className={`fixed inset-0 z-40 bg-white flex flex-col justify-center items-center gap-6 sm:gap-8 px-8 overflow-y-auto overscroll-contain md:hidden pb-[env(safe-area-inset-bottom)] pt-24 transition-opacity duration-200 ${
         open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}>
-        {links.map(({ label, href }, i) => (
+        {links.map(({ label, href }) => (
           <Link
             key={label}
             href={href}
             onClick={() => setOpen(false)}
-            className="font-serif italic text-[28px] sm:text-[32px] font-light text-[#1a1816] tracking-[.02em] transition-colors duration-300 hover:text-[#6a6560]"
-            style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
+            className="font-serif italic text-[24px] sm:text-[28px] font-normal text-[#1a1816] tracking-[.01em] hover:text-[#6a6560]"
           >
             {label}
           </Link>

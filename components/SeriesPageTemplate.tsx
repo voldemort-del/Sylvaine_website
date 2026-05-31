@@ -6,6 +6,46 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { Series, Painting } from "@/lib/data";
 
+function PaintingDetails({ painting, variant = "card" }: { painting: Painting; variant?: "card" | "zoom" }) {
+  if (variant === "zoom") {
+    return (
+      <div className="space-y-0.5">
+        {painting.dimensions && (
+          <p className="text-[8px] md:text-[9px] tracking-[.1em] md:tracking-[.12em] uppercase hidden sm:block" style={{ color: "rgba(255,255,255,.32)" }}>
+            {painting.dimensions}
+          </p>
+        )}
+        {painting.framedDimensions && (
+          <p className="text-[8px] tracking-[.1em] uppercase hidden md:block" style={{ color: "rgba(255,255,255,.24)" }}>
+            {painting.framedDimensions}
+          </p>
+        )}
+        <p className="text-[8px] md:text-[9px] tracking-[.12em] md:tracking-[.14em] uppercase hidden sm:block" style={{ color: "rgba(255,255,255,.38)" }}>
+          {painting.medium} · {painting.year}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-1 mb-2">
+      {painting.dimensions && (
+        <p className="text-[9px] md:text-[9.5px] tracking-[.1em] md:tracking-[.12em] uppercase text-[#9a9188]">
+          {painting.dimensions}
+        </p>
+      )}
+      {painting.framedDimensions && (
+        <p className="text-[8.5px] md:text-[9px] tracking-[.1em] uppercase text-[#9a9188]/80">
+          {painting.framedDimensions}
+        </p>
+      )}
+      <p className="text-[9px] md:text-[9.5px] tracking-[.1em] md:tracking-[.12em] uppercase text-[#9a9188]">
+        {painting.medium} · {painting.year}
+      </p>
+    </div>
+  );
+}
+
 /* ── Zoom Viewer ── */
 function ZoomViewer({ painting, onClose }: { painting: Painting; onClose: () => void }) {
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -148,9 +188,7 @@ function ZoomViewer({ painting, onClose }: { painting: Painting; onClose: () => 
         style={{ borderColor: "rgba(255,255,255,.08)", background: "rgba(10,9,8,.8)", backdropFilter: "blur(8px)" }}>
         <div className="min-w-0 mr-4">
           <p className="font-serif italic text-[14px] md:text-[17px] text-white mb-0.5 truncate">{painting.title}</p>
-          <p className="text-[8px] md:text-[9px] tracking-[.12em] md:tracking-[.14em] uppercase hidden sm:block" style={{ color: "rgba(255,255,255,.38)" }}>
-            {painting.medium} · {painting.year}
-          </p>
+          <PaintingDetails painting={painting} variant="zoom" />
         </div>
         <div className="flex items-center gap-1.5 md:gap-2 shrink-0">
           <button onClick={() => zoom(-0.4)} className="w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded text-sm transition-colors"
@@ -228,7 +266,7 @@ export default function SeriesPageTemplate({ series }: { series: Series }) {
       {/* Header */}
       <div className="pt-28 md:pt-40 pb-10 md:pb-14 px-6 md:px-14 border-b border-black/10">
         <div className="flex items-center gap-3 mb-6 md:mb-8">
-          <Link href="/study" className="text-[9px] tracking-[.22em] uppercase text-[#9a9188] hover:text-[#1a1816] transition-colors duration-300">Study</Link>
+          <Link href="/study" className="text-[9px] tracking-[.18em] uppercase text-[#9a9188] hover:text-[#1a1816] transition-colors duration-300">Studies</Link>
           <span className="text-[#9a9188] text-[9px]">→</span>
           <span className="text-[9px] tracking-[.22em] uppercase text-[#1a1816]">{series.name}</span>
         </div>
@@ -248,13 +286,13 @@ export default function SeriesPageTemplate({ series }: { series: Series }) {
       </div>
 
       {/* Paintings — 1 col mobile, 2 col sm, 3 col md */}
-      <section className="px-6 md:px-14 py-12 md:py-20">
+      <section className="px-6 md:px-14 py-16 md:py-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-12 md:gap-y-16">
           {series.paintings.map((painting) => (
             <div key={painting.id} className="group cursor-pointer" onClick={() => setSelected(painting)}>
-              <div className="relative overflow-hidden mb-4 md:mb-5 w-full" style={{ aspectRatio: "3/4" }}>
+              <div className="artwork-frame w-full mb-5">
                 <Image src={painting.img} alt={painting.alt} fill
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  className="object-cover object-center"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                 {painting.noReproduction && (
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -263,8 +301,8 @@ export default function SeriesPageTemplate({ series }: { series: Series }) {
                     </span>
                   </div>
                 )}
-                <div className="absolute inset-0 flex items-end justify-end p-3 md:p-4 bg-black/0 transition-colors duration-400 group-hover:bg-black/12">
-                  <span className="text-[8px] md:text-[9px] tracking-[.14em] md:tracking-[.18em] uppercase text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black/35 px-2 md:px-3 py-1.5 md:py-2 backdrop-blur-sm">
+                <div className="absolute inset-0 flex items-end justify-end p-3 md:p-4 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-[8px] md:text-[9px] tracking-[.14em] md:tracking-[.18em] uppercase text-white bg-black/35 px-2 md:px-3 py-1.5 md:py-2">
                     View &amp; zoom →
                   </span>
                 </div>
@@ -273,8 +311,8 @@ export default function SeriesPageTemplate({ series }: { series: Series }) {
                 {painting.title}
                 {painting.noReproduction && <span className="font-serif not-italic text-[10px] md:text-[11px] text-[#9a9188] ml-2">(study)</span>}
               </p>
-              <p className="text-[9px] md:text-[9.5px] tracking-[.1em] md:tracking-[.12em] uppercase text-[#9a9188] mb-2">{painting.medium} · {painting.year}</p>
-              {painting.hint && <p className="text-[12.5px] md:text-[13px] text-[#6a6560] leading-[1.75] mt-2">{painting.hint}</p>}
+              <PaintingDetails painting={painting} />
+              {painting.hint && <p className="text-[12.5px] md:text-[13px] text-[#6a6560] leading-[1.75]">{painting.hint}</p>}
               {painting.noReproduction && <p className="text-[8.5px] md:text-[9px] tracking-[.12em] md:tracking-[.14em] uppercase text-[#9a9188] mt-2">Not available for reproduction</p>}
             </div>
           ))}

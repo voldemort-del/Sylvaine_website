@@ -17,8 +17,8 @@ export default function Home() {
       <Nav />
       <Hero />
       <NorthrupStrip />
-      <StatementSection />
       <CollectionsSection />
+      <StatementSection />
       <SelectedWorks />
       <CommissionTeaser />
       <CollectorQuote />

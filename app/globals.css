@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   color: #1a1816;
   background: #fff;
   overflow-x: hidden;
@@ -31,6 +31,7 @@ body {
 
 /* Full-viewport sections that respect mobile browser chrome */
 .min-h-screen-safe {
+  min-height: 100vh;
   min-height: 100dvh;
 }
 
@@ -43,15 +44,23 @@ body {
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 .hero-rise {
-  animation: rise 1.6s cubic-bezier(.16,1,.3,1) both;
+  animation: rise 1.2s ease both;
 }
 .hero-rise-delay {
-  animation: rise 1.6s cubic-bezier(.16,1,.3,1) both;
-  animation-delay: 0.9s;
+  animation: rise 1.2s ease both;
+  animation-delay: 0.5s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .hero-rise-delay {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes scrollPulse {
@@ -63,11 +72,41 @@ body {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  opacity: 0.85;
+  transition: opacity 0.5s ease;
 }
 .reveal.in {
   opacity: 1;
-  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+  }
+  .hero-zoom {
+    animation: none;
+  }
+}
+
+/* Consistent artwork presentation — no shadows, centered crop, uniform ratio */
+.artwork-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #f8f5ef;
+}
+.artwork-frame img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Section breathing room */
+.section-space {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 768px) {
+  .section-space {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
 }

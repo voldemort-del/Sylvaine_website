@@ -155,7 +155,7 @@ export const allSeries: Series[] = [
   {
     id: "studies",
     numeral: "V",
-    name: "Studies",
+    name: "Collections",
     subtitle: "Early works & explorations",
     description:
       "Studies brings together early works and explorations created through direct reference. These pieces reflect a stage of learning and observation that contributed to the development of my current practice, now rooted in my own photographic sources.",

@@ -97,7 +97,7 @@ export default function ContactClient() {
             {[
               { label: "Email",     value: "sylviane.paris_dickson@yahoo.com", href: "mailto:sylviane.paris_dickson@yahoo.com" },
               { label: "Instagram", value: "@sylvianeparis", href: "https://www.instagram.com/sylvianeparis" },
-              { label: "Facebook",  value: "Sylviane Paris", href: "https://www.facebook.com/sylvianeparisdickson" },
+              { label: "Facebook",  value: "Sylviane Paris-Dickson", href: "https://www.facebook.com/sylvianeparisdickson" },
             ].map((item) => (
               <div key={item.label}
                 className="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-5 py-4 border-t border-black/10 last:border-b transition-all duration-300 sm:hover:pl-2">

@@ -66,23 +66,29 @@ export default function CommissionClient() {
           className="object-cover object-center"
           sizes="100vw"
         />
+        {/* Left-to-right dark gradient — protects the text column */}
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(135deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.2) 60%, rgba(0,0,0,.1) 100%)"
+          background: "linear-gradient(to right, rgba(0,0,0,.92) 0%, rgba(0,0,0,.82) 30%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.05) 100%)"
+        }} />
+        {/* Bottom fade — protects the CTA link over the green/lighter lower image area */}
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(to top, rgba(0,0,0,.6) 0%, rgba(0,0,0,.0) 40%)"
         }} />
         <div className="absolute top-1/2 -translate-y-1/2 left-6 right-6 sm:right-auto md:left-14 max-w-lg pr-2">
-          <p className="flex items-center gap-3 text-[8px] sm:text-[9px] tracking-[.28em] sm:tracking-[.32em] uppercase text-white/42 mb-5 sm:mb-6">
-            <span className="block w-8 h-px bg-white/30 shrink-0" />
+          <p className="flex items-center gap-3 text-[8px] sm:text-[9px] tracking-[.28em] sm:tracking-[.32em] uppercase text-white/75 mb-5 sm:mb-6 drop-shadow-md">
+            <span className="block w-8 h-px bg-white/50 shrink-0" />
             Commission
           </p>
-          <h1 className="font-serif font-light text-white leading-[.88] tracking-[.02em] mb-5 sm:mb-7"
-            style={{ fontSize: "clamp(40px, 9vw, 96px)", fontWeight: 200 }}>
+          <h1 className="font-serif font-light text-white leading-[.88] tracking-[.02em] mb-5 sm:mb-7 drop-shadow-lg"
+            style={{ fontSize: "clamp(40px, 9vw, 96px)", fontWeight: 200, textShadow: "0 2px 24px rgba(0,0,0,.6)" }}>
             Creating<br />Together
           </h1>
-          <p className="font-serif italic font-light text-white/65 leading-[1.7] text-[16px] sm:text-[18px] max-w-sm mb-8 sm:mb-10">
+          <p className="font-serif italic font-light text-white/95 leading-[1.7] text-[16px] sm:text-[18px] max-w-sm mb-8 sm:mb-10 drop-shadow-md"
+            style={{ textShadow: "0 1px 12px rgba(0,0,0,.7)" }}>
             Each painting begins with a conversation — about a place, a memory, and what you wish to hold onto.
           </p>
           <a href="#form"
-            className="inline-flex items-center gap-3 text-[9.5px] tracking-[.22em] uppercase text-white/75 border-b border-white/30 pb-1 hover:text-white hover:border-white">
+            className="inline-flex items-center gap-3 text-[9.5px] tracking-[.22em] uppercase text-white border-b border-white/55 pb-1 hover:border-white drop-shadow-md">
             Begin a conversation <span>→</span>
           </a>
         </div>

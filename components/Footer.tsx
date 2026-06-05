@@ -4,18 +4,26 @@ export default function Footer() {
   return (
     <>
       {/* Studio strip */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-3 px-6 md:px-14 py-8 md:py-10 bg-[#f8f5ef] border-t border-b border-black/10 text-center sm:text-left">
-        <div className="space-y-2 max-w-md">
-          <p className="font-serif italic text-[13px] sm:text-[14px] md:text-[15px] text-[#6a6560]">
-            Permanent exhibition open to visitors
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 px-6 md:px-14 py-8 md:py-10 bg-[#f8f5ef] border-t border-b border-black/10 text-left">
+        <div className="space-y-2 max-w-xl">
+          <p className="font-serif italic text-[16px] sm:text-[18px] md:text-[20px] text-[#1a1816]">
+            Visit the Studio Gallery
           </p>
-          <p className="text-[8px] sm:text-[8.5px] tracking-[.14em] uppercase text-[#9a9188] leading-relaxed">
-            Visits by appointment — Northrup King Building · Studio 439
+          <p className="text-[13px] md:text-[13.5px] text-[#6a6560] leading-relaxed">
+            The permanent exhibition is open to the public every Saturday from 12:00 PM to 4:00 PM and by appointment.
+          </p>
+          <p className="text-[12px] text-[#6a6560]">
+            Phone: <a href="tel:+16127500998" className="hover:text-[#1a1816] transition-colors underline decoration-black/20 hover:decoration-black">(612) 750-0998</a>
           </p>
         </div>
-        <p className="text-[8px] sm:text-[8.5px] md:text-[9px] tracking-[.14em] sm:tracking-[.18em] md:tracking-[.2em] uppercase text-[#9a9188] leading-relaxed">
-          Northrup King Building · Studio 439 · Minneapolis, MN
-        </p>
+        <div className="shrink-0 space-y-1">
+          <p className="text-[9.5px] tracking-[.2em] uppercase text-[#1a1816] font-normal">
+            Northrup King Building
+          </p>
+          <p className="text-[9px] tracking-[.16em] uppercase text-[#9a9188]">
+            Studio 439 · Minneapolis, MN
+          </p>
+        </div>
       </div>
 
       {/* Footer */}

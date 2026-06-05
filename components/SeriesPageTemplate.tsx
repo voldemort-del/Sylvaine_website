@@ -290,10 +290,11 @@ export default function SeriesPageTemplate({ series }: { series: Series }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-12 md:gap-y-16">
           {series.paintings.map((painting) => (
             <div key={painting.id} className="group cursor-pointer" onClick={() => setSelected(painting)}>
-              <div className="artwork-frame w-full mb-5">
-                <Image src={painting.img} alt={painting.alt} fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+              <div className="relative w-full mb-5 bg-[#f8f5ef] overflow-hidden">
+                <Image src={painting.img} alt={painting.alt}
+                  width={0} height={0}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ width: "100%", height: "auto", display: "block" }} />
                 {painting.noReproduction && (
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <span className="font-serif italic text-[10px] md:text-[11px] tracking-[.14em] uppercase text-white/22" style={{ transform: "rotate(-25deg)" }}>

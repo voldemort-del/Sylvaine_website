@@ -2,7 +2,7 @@ import SeriesPageTemplate from "@/components/SeriesPageTemplate";
 import { getSeriesById } from "@/lib/data";
 
 export const metadata = {
-  title: "Studies — Sylviane Paris",
+  title: "Collections — Sylviane Paris",
 };
 
 export default function Studies() {

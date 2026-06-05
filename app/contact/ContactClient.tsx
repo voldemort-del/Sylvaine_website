@@ -96,7 +96,7 @@ export default function ContactClient() {
           <div className="flex flex-col mb-8">
             {[
               { label: "Email",     value: "sylviane.paris_dickson@yahoo.com", href: "mailto:sylviane.paris_dickson@yahoo.com" },
-              { label: "Instagram", value: "@sylvianeparis", href: "https://www.instagram.com/sylvianeparis" },
+              { label: "Instagram", value: "@sylvianeparisdickson", href: "https://www.instagram.com/sylvianeparisdickson/" },
               { label: "Facebook",  value: "Sylviane Paris-Dickson", href: "https://www.facebook.com/sylvianeparisdickson" },
             ].map((item) => (
               <div key={item.label}

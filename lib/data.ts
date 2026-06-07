@@ -172,7 +172,7 @@ export const allSeries: Series[] = [
         dimensions: "20 × 28 in / 51 × 71 cm",
         framedDimensions: "Framed 29 × 37 in / 73.5 × 94 cm",
         hint: "An early exploration of form, strength, and sculptural presence.",
-        availabilityLabel: "For sale or reproduction",
+        availabilityLabel: "Not for sale and reproduction",
       },
       {
         id: "natures-guardians",
@@ -183,7 +183,7 @@ export const allSeries: Series[] = [
         dimensions: "27.75 × 18.5 in / 70.5 × 47 cm",
         framedDimensions: "Framed 36.5 × 27.5 in / 92.5 × 70 cm",
         hint: "A study of protective figures emerging within natural forms.",
-        availabilityLabel: "For sale or reproduction",
+        availabilityLabel: "Not for sale and reproduction",
       },
       {
         id: "beauty-of-venus",
@@ -195,7 +195,7 @@ export const allSeries: Series[] = [
         framedDimensions: "Framed 22.75 × 29.75 in / 57.5 × 75.5 cm",
         hint:
           "A study of classical form and timeless presence, where light reveals the softness and quiet vitality of the figure.",
-        availabilityLabel: "For sale or reproduction",
+        availabilityLabel: "Not for sale and reproduction",
       },
     ],
   },

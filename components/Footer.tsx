@@ -16,11 +16,11 @@ export default function Footer() {
             Phone: <a href="tel:+16127500998" className="hover:text-[#1a1816] transition-colors underline decoration-black/20 hover:decoration-black">(612) 750-0998</a>
           </p>
         </div>
-        <div className="shrink-0 space-y-1">
-          <p className="text-[9.5px] tracking-[.2em] uppercase text-[#1a1816] font-normal">
+        <div className="shrink-0 space-y-2">
+          <p className="text-[12.5px] md:text-[14px] tracking-[.14em] uppercase text-[#1a1816] font-normal leading-tight">
             Northrup King Building
           </p>
-          <p className="text-[9px] tracking-[.16em] uppercase text-[#9a9188]">
+          <p className="text-[11px] md:text-[12px] tracking-[.14em] uppercase text-[#9a9188] leading-tight">
             Studio 439 · Minneapolis, MN
           </p>
         </div>

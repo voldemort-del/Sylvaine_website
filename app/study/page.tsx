@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { allSeries } from "@/lib/data";
 
 export const metadata = {
-  title: "Studies — Sylviane Paris",
+  title: "Series — Sylviane Paris",
   description: "Collections of paintings by Sylviane Paris.",
 };
 
@@ -17,7 +17,7 @@ export default function StudyPage() {
         <span className="block text-[9px] tracking-[.28em] uppercase text-[#9a9188] mb-4">Collections</span>
         <h1 className="font-serif italic font-light text-[#1a1816] leading-[.9]"
           style={{ fontSize: "clamp(40px, 8vw, 88px)" }}>
-          Studies
+          Series
         </h1>
       </div>
 

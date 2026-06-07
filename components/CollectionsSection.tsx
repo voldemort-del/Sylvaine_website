@@ -6,7 +6,7 @@ const series = [
   { num: "II",  name: "Divine Presence",        sub: "Form, sculpture & quiet encounter", count: "2 works", img: "/morning-visit.jpg",  href: "/study/divine-presence" },
   { num: "III", name: "Living Moments",         sub: "Intimate spaces & everyday beauty", count: "3 works", img: "/art-of-indulgence.jpg", href: "/study/living-moments" },
   { num: "IV",  name: "Enchanted Path",         sub: "Nature as passage & transformation", count: "1 work", img: "/whispering-passage.jpg", href: "/study/enchanted-path" },
-  { num: "V",   name: "Collections",             sub: "Early works & explorations",        count: "3 works", img: "/natures-guardians.jpg",  href: "/study/studies" },
+  { num: "V",   name: "Studies",                 sub: "Early works & explorations",        count: "3 works", img: "/natures-guardians.jpg",  href: "/study/studies" },
 ];
 
 export default function CollectionsSection() {

@@ -1,13 +1,14 @@
 export type Painting = {
   id: string;
   title: string;
-  year: string;
+  year?: string;
   medium: string;
   img: string;
   alt: string;
   dimensions?: string;
   framedDimensions?: string;
   hint?: string;
+  availabilityLabel?: string;
   noReproduction?: boolean;
 };
 
@@ -155,7 +156,7 @@ export const allSeries: Series[] = [
   {
     id: "studies",
     numeral: "V",
-    name: "Collections",
+    name: "Studies",
     subtitle: "Early works & explorations",
     description:
       "Studies brings together early works and explorations created through direct reference. These pieces reflect a stage of learning and observation that contributed to the development of my current practice, now rooted in my own photographic sources.",
@@ -165,30 +166,28 @@ export const allSeries: Series[] = [
       {
         id: "poseidon",
         title: "Poseidon, The Magnificent",
-        year: "2024",
         medium: "Acrylic painting",
         img: "/poseidon.jpg",
         alt: "Poseidon, The Magnificent — Sylviane Paris",
         dimensions: "20 × 28 in / 51 × 71 cm",
         framedDimensions: "Framed 29 × 37 in / 73.5 × 94 cm",
         hint: "An early exploration of form, strength, and sculptural presence.",
-        noReproduction: true,
+        availabilityLabel: "For sale or reproduction",
       },
       {
         id: "natures-guardians",
         title: "Nature's Guardians",
-        year: "2024",
         medium: "Acrylic painting",
         img: "/natures-guardians.jpg",
         alt: "Nature's Guardians — Sylviane Paris",
         dimensions: "27.75 × 18.5 in / 70.5 × 47 cm",
         framedDimensions: "Framed 36.5 × 27.5 in / 92.5 × 70 cm",
         hint: "A study of protective figures emerging within natural forms.",
+        availabilityLabel: "For sale or reproduction",
       },
       {
         id: "beauty-of-venus",
         title: "The Beauty of Venus",
-        year: "2024",
         medium: "Acrylic painting",
         img: "/beauty-of-venus.jpg",
         alt: "The Beauty of Venus — Sylviane Paris",
@@ -196,6 +195,7 @@ export const allSeries: Series[] = [
         framedDimensions: "Framed 22.75 × 29.75 in / 57.5 × 75.5 cm",
         hint:
           "A study of classical form and timeless presence, where light reveals the softness and quiet vitality of the figure.",
+        availabilityLabel: "For sale or reproduction",
       },
     ],
   },

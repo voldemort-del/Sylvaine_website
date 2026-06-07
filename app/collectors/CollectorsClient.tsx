@@ -43,20 +43,20 @@ export default function CollectorsClient() {
             <Nav />
 
             {/* HERO */}
-            <section className="relative w-full min-h-[55dvh] sm:min-h-[65dvh] md:min-h-[72vh] overflow-hidden">
+            <section className="relative w-full min-h-[60dvh] sm:min-h-[70dvh] md:min-h-[82vh] overflow-hidden">
                 <Image
-                    src="/natures-guardians.jpg"
-                    alt="Nature's Guardians — Sylviane Paris"
+                    src="/balcony-refreshment.jpg"
+                    alt="Balcony Refreshment — Sylviane Paris"
                     fill
                     priority
-                    className="object-cover object-center"
+                    className="object-cover object-[center_38%]"
                     sizes="100vw"
                 />
                 <div className="absolute inset-0"
-                    style={{ background: "linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,.7) 100%)" }} />
+                    style={{ background: "linear-gradient(to bottom, rgba(0,0,0,.08) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,.48) 100%)" }} />
                 <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-12 md:pb-16">
-                    <p className="flex items-center gap-3 text-[9px] tracking-[.28em] uppercase text-white/42 mb-4">
-                        <span className="block w-7 h-px bg-white/32" />
+                    <p className="inline-flex items-center gap-3 text-[9px] tracking-[.28em] uppercase text-white bg-black/28 backdrop-blur-sm px-4 py-2 rounded-sm mb-4 shadow-[0_8px_24px_rgba(0,0,0,.18)]">
+                        <span className="block w-7 h-px bg-white/70" />
                         Collector Stories
                     </p>
                     <h1 className="font-serif font-light text-white leading-[.88]"

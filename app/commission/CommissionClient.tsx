@@ -66,31 +66,24 @@ export default function CommissionClient() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Left-to-right dark gradient — protects the text column */}
-        <div className="absolute inset-0" style={{
-          background: "linear-gradient(to right, rgba(0,0,0,.92) 0%, rgba(0,0,0,.82) 30%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.05) 100%)"
-        }} />
-        {/* Bottom fade — protects the CTA link over the green/lighter lower image area */}
-        <div className="absolute inset-0" style={{
-          background: "linear-gradient(to top, rgba(0,0,0,.6) 0%, rgba(0,0,0,.0) 40%)"
-        }} />
-        <div className="absolute top-1/2 -translate-y-1/2 left-6 right-6 sm:right-auto md:left-14 max-w-lg pr-2">
-          <p className="flex items-center gap-3 text-[8px] sm:text-[9px] tracking-[.28em] sm:tracking-[.32em] uppercase text-white/75 mb-5 sm:mb-6 drop-shadow-md">
-            <span className="block w-8 h-px bg-white/50 shrink-0" />
+        <div className="absolute top-1/2 -translate-y-1/2 left-6 right-6 sm:right-auto md:left-14 max-w-xl pr-2">
+          <div className="max-w-lg bg-[#f8f5ef]/84 backdrop-blur-md border border-white/55 shadow-[0_20px_70px_rgba(0,0,0,.18)] px-6 py-7 sm:px-8 sm:py-9 md:px-10 md:py-10">
+          <p className="flex items-center gap-3 text-[8px] sm:text-[9px] tracking-[.28em] sm:tracking-[.32em] uppercase text-[#6f665d] mb-5 sm:mb-6">
+            <span className="block w-8 h-px bg-[#9a9188] shrink-0" />
             Commission
           </p>
-          <h1 className="font-serif font-light text-white leading-[.88] tracking-[.02em] mb-5 sm:mb-7 drop-shadow-lg"
-            style={{ fontSize: "clamp(40px, 9vw, 96px)", fontWeight: 200, textShadow: "0 2px 24px rgba(0,0,0,.6)" }}>
+          <h1 className="font-serif font-light text-[#1a1816] leading-[.88] tracking-[.02em] mb-5 sm:mb-7"
+            style={{ fontSize: "clamp(40px, 9vw, 96px)", fontWeight: 200 }}>
             Creating<br />Together
           </h1>
-          <p className="font-serif italic font-light text-white/95 leading-[1.7] text-[16px] sm:text-[18px] max-w-sm mb-8 sm:mb-10 drop-shadow-md"
-            style={{ textShadow: "0 1px 12px rgba(0,0,0,.7)" }}>
+          <p className="font-serif italic font-light text-[#3f3a35] leading-[1.7] text-[16px] sm:text-[18px] max-w-sm mb-8 sm:mb-10">
             Each painting begins with a conversation — about a place, a memory, and what you wish to hold onto.
           </p>
           <a href="#form"
-            className="inline-flex items-center gap-3 text-[9.5px] tracking-[.22em] uppercase text-white border-b border-white/55 pb-1 hover:border-white drop-shadow-md">
+            className="group inline-flex items-center gap-3 bg-[#1a1816] text-white text-[9.5px] tracking-[.22em] uppercase px-6 py-4 hover:bg-[#3a3835] transition-colors duration-300">
             Begin a conversation <span>→</span>
           </a>
+          </div>
         </div>
       </section>
 
@@ -109,7 +102,7 @@ export default function CommissionClient() {
       </div>
 
       {/* ABOUT */}
-      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] border-b border-black/10">
+      <div className="grid grid-cols-1 md:grid-cols-[380px_minmax(0,1fr)] border-b border-black/10">
         <div className="px-6 md:px-14 py-12 md:py-20 border-b md:border-b-0 md:border-r border-black/10 flex flex-col justify-start">
           <span className="block text-[9px] tracking-[.28em] uppercase text-[#9a9188] mb-8">About commissions</span>
           <h2 className="font-serif italic font-light text-[#1a1816] leading-[1.15]"

@@ -21,7 +21,7 @@ function PaintingDetails({ painting, variant = "card" }: { painting: Painting; v
           </p>
         )}
         <p className="text-[8px] md:text-[9px] tracking-[.12em] md:tracking-[.14em] uppercase hidden sm:block" style={{ color: "rgba(255,255,255,.38)" }}>
-          {painting.medium} · {painting.year}
+          {painting.year ? `${painting.medium} · ${painting.year}` : painting.medium}
         </p>
       </div>
     );
@@ -40,7 +40,7 @@ function PaintingDetails({ painting, variant = "card" }: { painting: Painting; v
         </p>
       )}
       <p className="text-[9px] md:text-[9.5px] tracking-[.1em] md:tracking-[.12em] uppercase text-[#9a9188]">
-        {painting.medium} · {painting.year}
+        {painting.year ? `${painting.medium} · ${painting.year}` : painting.medium}
       </p>
     </div>
   );
@@ -242,10 +242,14 @@ function ZoomViewer({ painting, onClose }: { painting: Painting; onClose: () => 
       </div>
 
       {/* Hint bar */}
-      {painting.hint && (
+      {(painting.hint || painting.availabilityLabel || painting.noReproduction) && (
         <div className="px-4 md:px-7 py-3 md:py-4 border-t shrink-0" style={{ borderColor: "rgba(255,255,255,.06)", background: "rgba(10,9,8,.6)" }}>
-          <p className="font-serif italic text-[12px] md:text-[14px] leading-[1.6]" style={{ color: "rgba(255,255,255,.38)" }}>{painting.hint}</p>
-          {painting.noReproduction && (
+          {painting.hint && (
+            <p className="font-serif italic text-[12px] md:text-[14px] leading-[1.6]" style={{ color: "rgba(255,255,255,.38)" }}>{painting.hint}</p>
+          )}
+          {painting.availabilityLabel ? (
+            <p className="text-[8px] md:text-[9px] tracking-[.14em] md:tracking-[.16em] uppercase mt-1" style={{ color: "rgba(255,255,255,.22)" }}>{painting.availabilityLabel}</p>
+          ) : painting.noReproduction && (
             <p className="text-[8px] md:text-[9px] tracking-[.14em] md:tracking-[.16em] uppercase mt-1" style={{ color: "rgba(255,255,255,.22)" }}>Not available for reproduction</p>
           )}
         </div>
@@ -266,7 +270,7 @@ export default function SeriesPageTemplate({ series }: { series: Series }) {
       {/* Header */}
       <div className="pt-28 md:pt-40 pb-10 md:pb-14 px-6 md:px-14 border-b border-black/10">
         <div className="flex items-center gap-3 mb-6 md:mb-8">
-          <Link href="/study" className="text-[9px] tracking-[.18em] uppercase text-[#9a9188] hover:text-[#1a1816] transition-colors duration-300">Studies</Link>
+          <Link href="/study" className="text-[9px] tracking-[.18em] uppercase text-[#9a9188] hover:text-[#1a1816] transition-colors duration-300">Series</Link>
           <span className="text-[#9a9188] text-[9px]">→</span>
           <span className="text-[9px] tracking-[.22em] uppercase text-[#1a1816]">{series.name}</span>
         </div>
@@ -314,7 +318,9 @@ export default function SeriesPageTemplate({ series }: { series: Series }) {
               </p>
               <PaintingDetails painting={painting} />
               {painting.hint && <p className="text-[12.5px] md:text-[13px] text-[#6a6560] leading-[1.75]">{painting.hint}</p>}
-              {painting.noReproduction && <p className="text-[8.5px] md:text-[9px] tracking-[.12em] md:tracking-[.14em] uppercase text-[#9a9188] mt-2">Not available for reproduction</p>}
+              {painting.availabilityLabel ? (
+                <p className="text-[8.5px] md:text-[9px] tracking-[.12em] md:tracking-[.14em] uppercase text-[#9a9188] mt-2">{painting.availabilityLabel}</p>
+              ) : painting.noReproduction && <p className="text-[8.5px] md:text-[9px] tracking-[.12em] md:tracking-[.14em] uppercase text-[#9a9188] mt-2">Not available for reproduction</p>}
             </div>
           ))}
         </div>
@@ -322,7 +328,7 @@ export default function SeriesPageTemplate({ series }: { series: Series }) {
 
       {/* Bottom nav */}
       <div className="border-t border-black/10 px-6 md:px-14 py-7 md:py-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-[#f8f5ef]">
-        <Link href="/study" className="text-[9px] tracking-[.22em] uppercase text-[#9a9188] hover:text-[#1a1816] transition-colors duration-300">← All collections</Link>
+        <Link href="/study" className="text-[9px] tracking-[.22em] uppercase text-[#9a9188] hover:text-[#1a1816] transition-colors duration-300">← All series</Link>
         <span className="font-serif italic text-[12px] md:text-[13px] text-[#9a9188]">{series.numeral} of V</span>
       </div>
 

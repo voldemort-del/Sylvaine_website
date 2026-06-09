@@ -29,21 +29,21 @@ export default function LimitedEditionsPage() {
         <p className="text-[14px] md:text-[14.5px] text-[#6a6560] leading-[1.9] max-w-3xl mt-6">
           Limited editions are produced using museum-quality archival Giclée materials, signed and numbered by the artist, and accompanied by a Certificate of Authenticity. Editions are offered in carefully controlled quantities for a select group of works.
         </p>
-        <div className="mt-8 max-w-3xl mx-auto text-center">
-          <ul className="inline-grid grid-cols-1 gap-3 text-[11px] uppercase tracking-[.22em] text-[#9a9188] sm:grid-cols-2">
-            <li className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#f8f5ef] px-4 py-2">
+        <div className="mt-8 max-w-2xl mx-auto text-center">
+          <ul className="inline-grid grid-cols-1 gap-2 text-[10px] uppercase tracking-[.2em] text-[#9a9188] sm:grid-cols-2">
+            <li className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#f8f5ef] px-3 py-1.5">
               <span className="block w-1.5 h-1.5 rounded-full bg-[#1a1816]" />
               Museum-quality archival Giclée
             </li>
-            <li className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#f8f5ef] px-4 py-2">
+            <li className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#f8f5ef] px-3 py-1.5">
               <span className="block w-1.5 h-1.5 rounded-full bg-[#1a1816]" />
               Signed, numbered, authenticated
             </li>
-            <li className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#f8f5ef] px-4 py-2">
+            <li className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#f8f5ef] px-3 py-1.5">
               <span className="block w-1.5 h-1.5 rounded-full bg-[#1a1816]" />
               Sold unframed, shipped carefully
             </li>
-            <li className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#f8f5ef] px-4 py-2">
+            <li className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#f8f5ef] px-3 py-1.5">
               <span className="block w-1.5 h-1.5 rounded-full bg-[#1a1816]" />
               Once sold out, editions are final
             </li>

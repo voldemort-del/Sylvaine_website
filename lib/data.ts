@@ -1,3 +1,10 @@
+export type LimitedEdition = {
+  sizeLabel: string;
+  edition: string;
+  dimensions: string;
+  price: string;
+};
+
 export type Painting = {
   id: string;
   title: string;
@@ -8,8 +15,10 @@ export type Painting = {
   dimensions?: string;
   framedDimensions?: string;
   hint?: string;
+  status?: string;
   availabilityLabel?: string;
   noReproduction?: boolean;
+  limitedEditions?: LimitedEdition[];
 };
 
 export type Series = {
@@ -22,6 +31,21 @@ export type Series = {
   href: string;
   paintings: Painting[];
 };
+
+export type LimitedEditionWork = Painting & {
+  seriesName: string;
+  seriesHref: string;
+};
+
+export function getLimitedEditionWorks(): LimitedEditionWork[] {
+  return allSeries.flatMap((series) =>
+    series.paintings
+      .filter((painting): painting is Painting & { limitedEditions: LimitedEdition[] } =>
+        Array.isArray(painting.limitedEditions) && painting.limitedEditions.length > 0
+      )
+      .map((painting) => ({ ...painting, seriesName: series.name, seriesHref: series.href }))
+  );
+}
 
 export const allSeries: Series[] = [
   {
@@ -43,8 +67,29 @@ export const allSeries: Series[] = [
         alt: "Inner Illumination — Sylviane Paris",
         dimensions: "20.5 × 27.5 in / 52 × 70 cm",
         framedDimensions: "Framed 30 × 36.5 in / 77 × 93 cm",
+        status: "Available",
         hint:
           "Inner Illumination is inspired by the Basilica of Saint Mary in Minnesota and based on my own photograph. This work captures the quiet dialogue between structure and light. As illumination moves through the space, architecture becomes not only visible, but deeply felt.",
+        limitedEditions: [
+          {
+            sizeLabel: "Small",
+            edition: "Edition of 50",
+            dimensions: "16 × 21.46 in",
+            price: "$595",
+          },
+          {
+            sizeLabel: "Medium",
+            edition: "Edition of 25",
+            dimensions: "24 × 32 in",
+            price: "$995",
+          },
+          {
+            sizeLabel: "Large",
+            edition: "Edition of 10",
+            dimensions: "26 × 34.75 in",
+            price: "$1,950",
+          },
+        ],
       },
     ],
   },
@@ -67,7 +112,28 @@ export const allSeries: Series[] = [
         alt: "Morning Visit — Sylviane Paris",
         dimensions: "20.5 × 28.5 in / 52 × 72.5 cm",
         framedDimensions: "Framed 30 × 37.5 in / 72 × 90 cm",
+        status: "Available",
         hint: "A quiet encounter between figure, architecture, and stillness, where presence unfolds in silence.",
+        limitedEditions: [
+          {
+            sizeLabel: "Small",
+            edition: "Edition of 50",
+            dimensions: "16 × 22.25 in",
+            price: "$595",
+          },
+          {
+            sizeLabel: "Medium",
+            edition: "Edition of 25",
+            dimensions: "22 × 30.5 in",
+            price: "$995",
+          },
+          {
+            sizeLabel: "Large",
+            edition: "Edition of 10",
+            dimensions: "25 × 34.78 in",
+            price: "$1,950",
+          },
+        ],
       },
       {
         id: "souls-of-the-park",
@@ -78,8 +144,29 @@ export const allSeries: Series[] = [
         alt: "The Souls of the Park — Sylviane Paris",
         dimensions: "28.5 × 19.5 in / 72.5 × 49.5 cm",
         framedDimensions: "Framed 37.5 × 28.5 in / 95 × 72.5 cm",
+        status: "Available",
         hint:
           "Inspired by my experience as a theatre designer working with neutral masks for actors, The Souls of the Park reflects on how still forms come alive through presence and perception. In stone figures set within nature, I see a similar transformation — where what is silent becomes inhabited.",
+        limitedEditions: [
+          {
+            sizeLabel: "Small",
+            edition: "Edition of 50",
+            dimensions: "16 × 23.6 in",
+            price: "$595",
+          },
+          {
+            sizeLabel: "Medium",
+            edition: "Edition of 25",
+            dimensions: "22 × 32.5 in",
+            price: "$995",
+          },
+          {
+            sizeLabel: "Large",
+            edition: "Edition of 10",
+            dimensions: "24 × 35.36 in",
+            price: "$1,950",
+          },
+        ],
       },
     ],
   },
@@ -102,6 +189,7 @@ export const allSeries: Series[] = [
         alt: "The Art of Indulgence — Sylviane Paris",
         dimensions: "21.5 × 20 in / 52 × 51 cm",
         framedDimensions: "Framed 30.5 × 28.5 in / 77.5 × 72.5 cm",
+        status: "Available",
         hint: "A quiet celebration of enjoyment in everyday life, where simple gestures and objects carry warmth and presence.",
       },
       {
@@ -113,6 +201,7 @@ export const allSeries: Series[] = [
         alt: "Timeless Craft — Sylviane Paris",
         dimensions: "25 × 17 in / 63.5 × 43 cm",
         framedDimensions: "Framed 34 × 26 in / 86.5 × 66 cm",
+        status: "Sold",
         hint:
           "Originally built in the 17th century and later acquired by my ancestor, this piece now lives as a space for gathering and celebrating important family moments, where history and present life quietly overlap.",
       },
@@ -125,6 +214,7 @@ export const allSeries: Series[] = [
         alt: "Balcony Refreshment — Sylviane Paris",
         dimensions: "25 × 17 in / 63.5 × 43 cm",
         framedDimensions: "Framed 34 × 26 in / 86.5 × 66 cm",
+        status: "Available",
         hint: "A suspended moment between interior life and horizon, shaped by light, air, and stillness.",
       },
     ],
@@ -148,6 +238,7 @@ export const allSeries: Series[] = [
         alt: "Whispering Passage — Sylviane Paris",
         dimensions: "20 × 28 in / 51 × 71 cm",
         framedDimensions: "Framed 29 × 37 in / 73.5 × 94 cm",
+        status: "Available",
         hint:
           "A journey through nature as a place of transition and quiet mystery, where form, light, and color suggest movement between the visible and the imagined.",
       },

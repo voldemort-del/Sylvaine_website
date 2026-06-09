@@ -6,6 +6,7 @@ const links = [
   { label: "Series", href: "/study" },
   { label: "Commission", href: "/commission" },
   { label: "Collectors", href: "/collectors" },
+  { label: "Limited Editions", href: "/limited-editions" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
